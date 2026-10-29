@@ -1,0 +1,1187 @@
+/* ==========================================================================
+   ÁMBAR DE CHIAPAS - CATÁLOGO WEB RESPONSIVO
+   Optimizado para Teléfonos Celulares (Android & iOS)
+   Enfoque Limpio, Visual y Directo
+   ========================================================================== */
+
+:root {
+  /* Paleta Ámbar de Chiapas */
+  --amber-primary: #D98200;
+  --amber-glow: #F5A623;
+  --amber-light: #FDE8B5;
+  --amber-deep: #9E5300;
+  --amber-gradient: linear-gradient(135deg, #F5A623 0%, #D98200 50%, #9E5300 100%);
+  
+  /* Fondos Neutros */
+  --bg-main: #F8F5EE;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFDF9;
+  --text-primary: #1C1814;
+  --text-secondary: #574F45;
+  --text-muted: #807669;
+  
+  /* Bordes & Sombras */
+  --border-light: rgba(217, 130, 0, 0.15);
+  --shadow-sm: 0 2px 8px rgba(28, 24, 20, 0.06);
+  --shadow-md: 0 6px 18px rgba(28, 24, 20, 0.09);
+  --shadow-lg: 0 12px 32px rgba(28, 24, 20, 0.14);
+  
+  /* WhatsApp */
+  --whatsapp-green: #25D366;
+  --whatsapp-hover: #1EBE5D;
+  --whatsapp-glow: rgba(37, 211, 102, 0.35);
+
+  /* Dimensiones */
+  --border-radius-sm: 8px;
+  --border-radius-md: 14px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 9999px;
+  --container-max: 1200px;
+  
+  /* Transiciones */
+  --trans-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-smooth: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   RESET & BASE (Sin overflow horizontal)
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   1. HEADER SUPERIOR
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(248, 245, 238, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-gem {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.brand-origin {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--amber-deep);
+  letter-spacing: 0.02em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-fav-header {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--trans-fast);
+}
+
+.btn-fav-header:active {
+  transform: scale(0.92);
+}
+
+.btn-fav-header .badge-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #E53935;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.btn-whatsapp-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  border-radius: var(--border-radius-full);
+  background: var(--whatsapp-green);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 3px 10px var(--whatsapp-glow);
+  transition: transform var(--trans-fast);
+}
+
+.btn-whatsapp-header:active {
+  transform: scale(0.94);
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO BANNER DIRECTO (Sin textos largos ni relleno)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 14px 14px 8px;
+}
+
+.hero-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.hero-subtitle strong {
+  color: var(--amber-deep);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. BARRA STICKY DE BÚSQUEDA Y FILTROS
+   -------------------------------------------------------------------------- */
+.sticky-filter-bar {
+  position: sticky;
+  top: 59px;
+  z-index: 85;
+  background: rgba(248, 245, 238, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 8px 14px;
+  margin-bottom: 12px;
+}
+
+.filter-bar-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-and-view {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 42px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-full);
+  padding: 0 34px 0 36px;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--trans-fast);
+}
+
+.search-input:focus {
+  border-color: var(--amber-glow);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #E8E2D5;
+  color: var(--text-secondary);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+}
+
+.search-clear-btn.active {
+  display: flex;
+}
+
+.view-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--border-radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.view-toggle-btn:active {
+  transform: scale(0.92);
+}
+
+/* Category Pills */
+.category-pills-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 2px 0;
+  scrollbar-width: none;
+}
+
+.category-pills-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-pill {
+  flex-shrink: 0;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: var(--border-radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--trans-fast);
+}
+
+.cat-pill:active {
+  transform: scale(0.94);
+}
+
+.cat-pill.active {
+  background: var(--amber-deep);
+  color: #FFFFFF;
+  border-color: var(--amber-deep);
+}
+
+.cat-pill .count {
+  font-size: 0.7rem;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.07);
+  padding: 1px 5px;
+  border-radius: var(--border-radius-full);
+}
+
+.cat-pill.active .count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   4. STATUS BAR & PROGRESO
+   -------------------------------------------------------------------------- */
+.catalog-status-bar {
+  max-width: var(--container-max);
+  margin: 0 auto 10px;
+  padding: 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.status-meta strong {
+  color: var(--text-primary);
+}
+
+.progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(217, 130, 0, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 10%;
+  background: var(--amber-gradient);
+  border-radius: 2px;
+  transition: width var(--trans-fast);
+}
+
+/* --------------------------------------------------------------------------
+   5. GRID PRINCIPAL (Mobile-First: 1 Columna Grande y Visible por Default)
+   -------------------------------------------------------------------------- */
+.catalog-main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 14px 70px;
+  width: 100%;
+  flex: 1;
+}
+
+/* En teléfonos móviles Android e iOS: 1 columna grande para que las fotos se vean GRANDES y cerca */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Si el usuario elige vista compacta de 2 columnas en móvil */
+.catalog-grid.grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 100%;
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 640px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 16px;
+  }
+}
+
+/* Pantallas grandes (escritorio) */
+@media (min-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. TARJETA DE PULSERA (Limpia, Sin Mucho Texto, Foto Protagonista)
+   -------------------------------------------------------------------------- */
+.bracelet-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast);
+}
+
+.bracelet-card:active {
+  transform: scale(0.99);
+}
+
+/* Contenedor de la Foto (Grande y Bien Iluminado) */
+.card-media-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle at center, #FFFFFF 40%, #F4ECE0 100%);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-media-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  transition: transform var(--trans-smooth);
+}
+
+.bracelet-card:hover .card-media-wrap img {
+  transform: scale(1.04);
+}
+
+/* Badges sobre la foto */
+.card-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.badge-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(28, 24, 20, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFF;
+}
+
+.badge-tag.sku-tag {
+  background: var(--amber-deep);
+  color: #FFF;
+}
+
+.badge-tag.highlight {
+  background: #E58200;
+  color: #FFF;
+}
+
+/* Botón Favorito en la tarjeta */
+.btn-fav {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 3;
+}
+
+.btn-fav:active {
+  transform: scale(0.85);
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(28, 24, 20, 0.68);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFF;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--border-radius-full);
+  pointer-events: none;
+}
+
+/* Cuerpo de la Tarjeta */
+.card-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+.card-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.card-actions {
+  margin-top: auto;
+}
+
+/* Botón Directo WhatsApp */
+.btn-whatsapp-card {
+  width: 100%;
+  min-height: 46px;
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  border-radius: var(--border-radius-md);
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px var(--whatsapp-glow);
+  transition: transform var(--trans-fast);
+}
+
+.btn-whatsapp-card:active {
+  transform: scale(0.96);
+  background: var(--whatsapp-hover);
+}
+
+/* Ajustes cuando la cuadrícula está en 2 columnas en móvil */
+.catalog-grid.grid-2col .card-body {
+  padding: 8px 10px 10px;
+}
+
+.catalog-grid.grid-2col .card-title {
+  font-size: 0.86rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.catalog-grid.grid-2col .card-subtitle {
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catalog-grid.grid-2col .btn-whatsapp-card {
+  min-height: 40px;
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. ESTADO VACÍO
+   -------------------------------------------------------------------------- */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 14px;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--border-radius-md);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.empty-state.visible {
+  display: flex;
+}
+
+.empty-icon {
+  font-size: 2.2rem;
+}
+
+.empty-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.empty-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.btn-reset-filter {
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: var(--border-radius-full);
+  background: var(--amber-deep);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   8. MODAL / BOTTOM SHEET DE DETALLE & ZOOM
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 16, 12, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-sheet {
+  background: var(--bg-surface);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 240ms ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (min-width: 640px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 16px;
+  }
+  .modal-sheet {
+    border-radius: var(--border-radius-lg);
+  }
+}
+
+.modal-header {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-sku-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--amber-deep);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.modal-category-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #EBE5DB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.modal-content-scroll {
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-image-stage {
+  width: 100%;
+  max-height: 320px;
+  background: radial-gradient(circle at center, #FFFFFF 50%, #F5ECE0 100%);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image-stage img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.modal-image-stage img.zoomed {
+  transform: scale(1.6);
+  cursor: zoom-out;
+}
+
+.zoom-floating-control {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(28, 24, 20, 0.7);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.modal-bracelet-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.modal-bracelet-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.modal-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.modal-spec-card {
+  background: var(--bg-main);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 8px 10px;
+}
+
+.modal-spec-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--amber-deep);
+  text-transform: uppercase;
+  display: block;
+}
+
+.modal-spec-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.modal-meaning-box {
+  background: #FFF7EB;
+  border-left: 3px solid var(--amber-glow);
+  padding: 8px 12px;
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.modal-meaning-box strong {
+  color: var(--amber-deep);
+}
+
+.modal-footer {
+  padding: 10px 14px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-surface-elevated);
+}
+
+.btn-whatsapp-modal {
+  width: 100%;
+  min-height: 48px;
+  background: var(--whatsapp-green);
+  color: #fff;
+  border-radius: var(--border-radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px var(--whatsapp-glow);
+}
+
+/* --------------------------------------------------------------------------
+   9. DRAWER DE FAVORITAS
+   -------------------------------------------------------------------------- */
+.fav-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  background: rgba(20, 16, 12, 0.65);
+  display: none;
+}
+
+.fav-drawer-overlay.open {
+  display: block;
+}
+
+.fav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-surface);
+  z-index: 96;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--trans-smooth);
+}
+
+.fav-drawer.open {
+  transform: translateX(0);
+}
+
+.fav-drawer-header {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fav-drawer-title {
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fav-items-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fav-item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-sm);
+  padding: 8px;
+}
+
+.fav-item-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-sm);
+  background: #FFF;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.fav-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fav-item-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.fav-item-sku {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--amber-deep);
+}
+
+.fav-item-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-remove-fav {
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.fav-drawer-footer {
+  padding: 14px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-whatsapp-multi {
+  width: 100%;
+  min-height: 46px;
+  background: var(--whatsapp-green);
+  color: #fff;
+  border-radius: var(--border-radius-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px var(--whatsapp-glow);
+}
+
+.btn-close-drawer-text {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   10. BOTÓN FLOTANTE WHATSAPP (Ergonómico para pulgar en móviles)
+   -------------------------------------------------------------------------- */
+.floating-wa-btn {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 20px) + 14px);
+  right: 14px;
+  z-index: 80;
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  padding: 10px 16px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: transform var(--trans-fast);
+}
+
+.floating-wa-btn:active {
+  transform: scale(0.92);
+}
+
+@media (max-width: 480px) {
+  .floating-wa-btn .floating-label {
+    display: none;
+  }
+  .floating-wa-btn {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .floating-wa-btn .wa-bubble-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. FOOTER LIMPIO
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: #1A1612;
+  color: #9C9388;
+  padding: 24px 14px calc(env(safe-area-inset-bottom, 20px) + 20px);
+  text-align: center;
+  font-size: 0.82rem;
+  margin-top: 20px;
+}
+
+.footer-title {
+  color: #FFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.footer-contact {
+  margin-bottom: 12px;
+}
+
+.footer-contact a {
+  color: var(--amber-glow);
+  font-weight: 600;
+}
+
+.principles-accordion {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.principles-accordion summary {
+  outline: none;
+  font-weight: 600;
+}
+
+.principles-accordion-body {
+  margin-top: 8px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Toast */
+.toast-notice {
+  position: fixed;
+  bottom: 74px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: rgba(28, 24, 20, 0.95);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 110;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform var(--trans-fast), opacity var(--trans-fast);
+}
+
+.toast-notice.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

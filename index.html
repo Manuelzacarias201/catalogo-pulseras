@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Ámbar de Chiapas | Catálogo de Pulseras</title>
+  <meta name="description" content="Catálogo en línea de pulseras de ámbar auténtico de Simojovel, Chiapas. Pedidos directos por WhatsApp al +52 961 749 6409.">
+  <meta name="theme-color" content="#D98200">
+  
+  <!-- Optimización iOS & Android Web App -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ámbar Chiapas">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Catálogo de Pulseras de Ámbar de Chiapas">
+  <meta property="og:description" content="Pulseras de ámbar auténtico de Chiapas. Elige tu modelo y pídela por WhatsApp al +52 961 749 6409.">
+  <meta property="og:image" content="images/amb-039.jpg">
+
+  <!-- Fuentes Tipográficas Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. HEADER SUPERIOR COMPACTO (Gestalt: Proximidad & Continuidad)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <span class="brand-gem" aria-hidden="true">💎</span>
+        <div class="brand-titles">
+          <span class="brand-title">ÁMBAR CHIAPAS</span>
+          <span class="brand-origin">Simojovel • Joyería Artesanal</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="btn-fav-header" id="favDrawerBtn" aria-label="Ver mis pulseras favoritas">
+          <span class="fav-icon">🤍</span>
+          <span class="badge-count" id="favCountBadge" style="display: none;">0</span>
+        </button>
+
+        <a href="https://wa.me/529617496409?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20el%20cat%C3%A1logo%20de%20pulseras." 
+           target="_blank" rel="noopener noreferrer" class="btn-whatsapp-header" aria-label="WhatsApp">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO BANNER DIRECTO Y SIN RELLENO (Estética-Usabilidad)
+       ========================================================================= -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <h1 class="hero-title">Pulseras de Ámbar</h1>
+      <p class="hero-subtitle">Ámbar auténtico de Simojovel, Chiapas. Toca <strong>«Pedir por WhatsApp»</strong> en cualquier modelo para apartarla directamente.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. BARRA STICKY DE BÚSQUEDA Y FILTROS (Hick-Hyman & Miller)
+       ========================================================================= -->
+  <nav class="sticky-filter-bar" aria-label="Filtros del catálogo">
+    <div class="filter-bar-inner">
+      <div class="search-and-view">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="text" id="searchInput" class="search-input" 
+                 placeholder="Buscar por color, piedra o código (ej. Ónix, 005)..." 
+                 autocomplete="off" autocorrect="off" spellcheck="false"
+                 aria-label="Buscar pulseras">
+          <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Limpiar búsqueda">✕</button>
+        </div>
+
+        <button type="button" id="viewToggleBtn" class="view-toggle-btn" 
+                title="Cambiar cuadrícula a 1 o 2 columnas" aria-label="Cambiar vista">
+          <span id="viewToggleIcon">⊞</span>
+        </button>
+      </div>
+
+      <!-- Filtros por categoría (Scroll horizontal suave) -->
+      <div class="category-pills-wrap" role="tablist">
+        <button type="button" class="cat-pill active" data-category="all" role="tab">
+          <span>Todas</span>
+          <span class="count">42</span>
+        </button>
+        <button type="button" class="cat-pill" data-category="destacadas" role="tab">
+          <span>Destacadas</span>
+          <span class="count">10</span>
+        </button>
+        <button type="button" class="cat-pill" data-category="ambar-puro" role="tab">
+          <span>Ámbar Puro</span>
+          <span class="count">4</span>
+        </button>
+        <button type="button" class="cat-pill" data-category="proteccion" role="tab">
+          <span>Ónix & Protección</span>
+          <span class="count">12</span>
+        </button>
+        <button type="button" class="cat-pill" data-category="chakras" role="tab">
+          <span>7 Chakras</span>
+          <span class="count">5</span>
+        </button>
+        <button type="button" class="cat-pill" data-category="cristales" role="tab">
+          <span>Cristales & Color</span>
+          <span class="count">17</span>
+        </button>
+        <button type="button" class="cat-pill" data-category="boho" role="tab">
+          <span>Boho</span>
+          <span class="count">4</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       4. BARRA DE ESTADO & PROGRESO DE EXPLORACIÓN (Efecto Zeigarnik)
+       ========================================================================= -->
+  <div class="catalog-status-bar">
+    <div class="status-meta">
+      <span id="statusCountText">Mostrando <strong>42</strong> pulseras</span>
+      <span>Vistas: <strong id="progressPercentText">0%</strong></span>
+    </div>
+    <div class="progress-track" aria-hidden="true">
+      <div class="progress-bar-fill" id="progressBarFill" style="width: 5%;"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       5. CATÁLOGO PRINCIPAL (Cards Grandes, Visibles y Claras)
+       ========================================================================= -->
+  <main class="catalog-main">
+    <section class="catalog-grid" id="catalogGrid" aria-label="Catálogo de Pulseras">
+      <!-- Se inyecta dinámicamente desde app.js -->
+    </section>
+
+    <!-- Estado vacío si no hay coincidencias -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">🔍</div>
+      <h3 class="empty-title">No encontramos pulseras con esa búsqueda</h3>
+      <p class="empty-desc">Prueba buscando por color (negro, turquesa, rosa) o código (ej. AMB-005).</p>
+      <button type="button" class="btn-reset-filter" onclick="window.catalogApp.resetFilter()">
+        Ver todo el catálogo (42 piezas)
+      </button>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       6. MODAL / BOTTOM SHEET DE DETALLE & ZOOM
+       ========================================================================= -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-sku-tag" id="modalSku">AMB-001</span>
+          <span class="modal-category-name" id="modalCategory">7 Chakras</span>
+        </div>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar detalle">✕</button>
+      </div>
+
+      <div class="modal-content-scroll">
+        <!-- Escenario de Imagen con Zoom Interactivo -->
+        <div class="modal-image-stage" id="modalImageStage">
+          <img id="modalImage" src="" alt="Pulsera de Ámbar" loading="eager">
+          <div class="zoom-floating-control">
+            <span>🔍</span>
+            <span id="zoomStatusText">Toca la foto para ampliar</span>
+          </div>
+        </div>
+
+        <h2 class="modal-bracelet-title" id="modalTitle">Nombre de la Pulsera</h2>
+        <p class="modal-bracelet-desc" id="modalDesc">Descripción.</p>
+
+        <!-- Ficha Técnica Resumida -->
+        <div class="modal-specs-grid">
+          <div class="modal-spec-card">
+            <span class="modal-spec-label">Ámbar</span>
+            <span class="modal-spec-val" id="modalAmberType">Genuino de Chiapas</span>
+          </div>
+          <div class="modal-spec-card">
+            <span class="modal-spec-label">Ajuste</span>
+            <span class="modal-spec-val" id="modalClosure">Elástica / Macramé</span>
+          </div>
+        </div>
+
+        <div class="modal-meaning-box" id="modalMeaningBox">
+          <strong>Propiedades:</strong>
+          <span id="modalMeaning">Equilibrio y protección energética.</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" id="modalWaBtn" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-modal">
+          <span>Pedir por WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       7. DRAWER DE FAVORITAS (Zeigarnik Effect & Pedido Múltiple)
+       ========================================================================= -->
+  <div class="fav-drawer-overlay" id="favDrawerOverlay"></div>
+  <aside class="fav-drawer" id="favDrawer" aria-label="Pulseras favoritas">
+    <div class="fav-drawer-header">
+      <h3 class="fav-drawer-title">
+        <span>🤍</span>
+        <span>Mis Favoritas (<span id="favCountDrawer">0</span>)</span>
+      </h3>
+      <button type="button" class="modal-close-btn" id="favDrawerCloseBtn" aria-label="Cerrar favoritas">✕</button>
+    </div>
+
+    <div class="fav-items-list" id="favItemsList">
+      <!-- Se inyecta dinámicamente -->
+    </div>
+
+    <div class="fav-drawer-footer">
+      <a href="#" id="btnWaMulti" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-multi">
+        <span>Preguntar por mis favoritas en WhatsApp</span>
+      </a>
+      <button type="button" class="btn-close-drawer-text" onclick="window.catalogApp.closeFavoritesDrawer();">
+        Seguir viendo catálogo
+      </button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       8. BOTÓN FLOTANTE WHATSAPP (Ley de Fitts)
+       ========================================================================= -->
+  <a href="https://wa.me/529617496409?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20las%20pulseras." 
+     id="floatingWaBtn" target="_blank" rel="noopener noreferrer" 
+     class="floating-wa-btn" aria-label="WhatsApp directo">
+    <span class="wa-bubble-icon">💬</span>
+    <span class="floating-label">WhatsApp</span>
+  </a>
+
+  <!-- =========================================================================
+       9. FOOTER LIMPIO Y ELEGANTE
+       ========================================================================= -->
+  <footer class="site-footer">
+    <p class="footer-title">Ámbar Auténtico de Chiapas</p>
+    <p class="footer-contact">Simojovel & Tuxtla Gutiérrez, Chiapas • WhatsApp: <a href="https://wa.me/529617496409">+52 961 749 6409</a></p>
+    
+    <!-- Detalle discreto sobre principios aplicados para consulta técnica -->
+    <details class="principles-accordion">
+      <summary>Principios de diseño y usabilidad aplicados</summary>
+      <div class="principles-accordion-body">
+        <p><strong>Gestalt:</strong> Proximidad, Semejanza, Cierre, Continuidad, Figura/Fondo, Simetría, Destino Común, Pregnancia, Conexión.</p>
+        <p><strong>Usabilidad:</strong> Hick-Hyman, Fitts, Jakob, Miller, Pareto (80/20), Tesler, Doherty, Postel, Estética-Usabilidad, Efecto Zeigarnik.</p>
+      </div>
+    </details>
+  </footer>
+
+  <!-- Toast flotante para notificaciones -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    Notificación
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/pulseras-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

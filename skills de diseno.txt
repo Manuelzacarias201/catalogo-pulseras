@@ -1,0 +1,24 @@
+### Principios de la Gestalt
+
+1. Ley de Proximidad
+2. Ley de Semejanza
+3. Ley de Cierre
+4. Ley de Continuidad
+5. Ley de Figura y Fondo
+6. Ley de Simetría
+7. Ley de Destino Común
+8. Ley de Pregnancia (Buena Forma)
+9. Ley de Conexión
+
+### Leyes de usabilidad
+
+10. Ley de Hick-Hyman
+11. Ley de Fitts
+12. Ley de Jakob
+13. Ley de Miller
+14. Ley de Pareto
+15. Ley de Tesler
+16. Ley de Doherty
+17. Ley de Postel
+18. Ley de Estética-Usabilidad
+19. Efecto Zeigarnik
